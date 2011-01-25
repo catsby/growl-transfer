@@ -12,6 +12,10 @@ module GrowlDown
         end
       end
       @output.puts "finished"
+      g = Growl.new "localhost", "GrowlDown",
+                    ["GrowlDown Notification"]
+      g.notify "GrowlDown Notification", "#{remote_path}",
+               "Download complete"
     end
     
   end
