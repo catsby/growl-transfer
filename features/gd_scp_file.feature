@@ -8,7 +8,8 @@ Feature: growl-down downloads a file via scp
 
     Scenario: download file assuming ssh keyless authentication
         Given I have an available server "ctshryock.com"
-        And "growl-test/unicorns.zip" as the file name
+        And "growl-down-test/unicorns.zip" as the file name
         When I run "download"
-        Then I should see "finished"
+        Then I should see "Finished!"
+        And TEST_DIR should contains "unicorns.zip" file
         
