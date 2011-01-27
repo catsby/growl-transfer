@@ -1,3 +1,22 @@
 #!/usr/bin/env ruby
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+$:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
 require 'growl-down'
+
+require 'optparse'
+
+# Get source and destintation from command line
+options = {}
+case ARGV.size
+  when 1
+    options['remote'] = ARGV[0]
+    options['local']  = '.'
+  when 2
+    options['remote'] = ARGV[0]
+    options['local']  = ARGV[1]
+  else
+    puts "Invalid options"
+    exit(1)
+end
+
+downloader = GrowlDown::GDScp.new(STDOUT)
+downloader.download(options['remote'], options['local'])
