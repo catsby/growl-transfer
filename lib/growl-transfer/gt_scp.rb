@@ -1,5 +1,5 @@
-module GrowlDown
-  class GDScp
+module GrowlTransfer
+  class GTScp
     def initialize(output)
       @output = output
     end
@@ -14,9 +14,9 @@ module GrowlDown
         end
       end
       @output.puts "Finished!"
-      g = Growl.new "localhost", "GrowlDown",
-                    ["GrowlDown Notification"]
-      g.notify "GrowlDown Notification", "#{file}",
+      g = Growl.new "localhost", "GrowlTransfer",
+                    ["GrowlTransfer Notification"]
+      g.notify "GrowlTransfer Notification", "#{file}",
                "Download complete"
     end
     
