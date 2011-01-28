@@ -8,7 +8,7 @@ module GrowlTransfer
       @output.puts "Downloading #{remote}"            
       params = remote.split(":")
       file = params.last.split("/").last
-      Net::SCP.start(params[0], "clint") do |scp|
+      Net::SCP.start(params[0], ENV['USER']) do |scp|
         scp.download!(params[1], local_path, {:recursive => true, :verbose => true}) do |ch, name, sent, total|
           # => progress?
         end
