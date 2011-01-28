@@ -2,6 +2,8 @@
 
 Growl-Transfer is a little gem that wraps around a file transfer protocol (scp/curl) and notifies you via growl when the transfer is complete.
 
+This is an early release, so there's not a ton here.
+
 ##Installation
 Growl-Transfer requires [Growl][1] to be installed first.
 
@@ -11,6 +13,11 @@ Then, in Growl's preferences, enable "Listen for incoming notifications" and "Al
 Growl-Transfer sends growl notifications to "localhost" and needs these options enabled to function.  (Password support coming...'soon')
 
 !["Growl Preferences"](http://ctshryock.com/static/images/growl-transfer-prefs.png)
+
+##Features
+
+- Download files using scp and ssh keyless authentication
+- Much more coming soon...
 
 ##Contributing to Growl-Transfer
  
