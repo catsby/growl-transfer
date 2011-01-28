@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
     "features/gd_scp_file.feature",
     "features/step_definitions/gd_scp_steps.rb",
     "features/support/env.rb",
+    "growl-down.gemspec",
     "lib/growl-down.rb",
     "lib/growl-down/gd_scp.rb",
     "test/helper.rb",
