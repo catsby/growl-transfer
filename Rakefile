@@ -12,12 +12,12 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "growl-down"
-  gem.homepage = "http://github.com/ctshryock/gd"
+  gem.name = "growl-transfer"
+  gem.homepage = "https://github.com/ctshryock/growl-transfer"
   gem.license = "MIT"
-  gem.summary = %Q{Download big files, get Growl notice when it's done}
+  gem.summary = %Q{Transfer big files, get Growl notice when it's done}
   gem.description = %Q{A ruby gem wrapper around scp / curl / wget (and the like) that notifies you via Growl when the transfer is complete}
-  gem.email = "clint+growl-down@ctshryock.com"
+  gem.email = "clint+growl-transfer@ctshryock.com"
   gem.authors = ["Clint Shryock"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)

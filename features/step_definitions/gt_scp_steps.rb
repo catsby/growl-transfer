@@ -35,7 +35,7 @@ When /^"([^"]*)" as the file name$/ do |remote_path|
 end
 
 When /^I run "([^"]*)"$/ do |arg1|
-  gd_scp = GrowlDown::GDScp.new(output)
+  gd_scp = GrowlTransfer::GTScp.new(output)
   gd_scp.download(@remote.join(':'), TEST_DIR)
 end
 
