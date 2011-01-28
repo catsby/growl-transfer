@@ -16,7 +16,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/ctshryock/gd"
   gem.license = "MIT"
   gem.summary = %Q{Download big files, get Growl notice when it's done}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.description = %Q{A ruby gem wrapper around scp / curl / wget (and the like) that notifies you via Growl when the transfer is complete}
   gem.email = "clint+growl-down@ctshryock.com"
   gem.authors = ["Clint Shryock"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
