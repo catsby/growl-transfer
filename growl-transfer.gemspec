@@ -5,31 +5,31 @@
 
 Gem::Specification.new do |s|
   s.name = %q{growl-transfer}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Clint Shryock"]
-  s.date = %q{2011-01-27}
+  s.date = %q{2011-01-28}
   s.default_executable = %q{gt}
   s.description = %q{A ruby gem wrapper around scp / curl / wget (and the like) that notifies you via Growl when the transfer is complete}
   s.email = %q{clint+growl-transfer@ctshryock.com}
   s.executables = ["gt"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.rdoc"
+    "README.md"
   ]
   s.files = [
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
-    "README.rdoc",
+    "README.md",
     "Rakefile",
     "VERSION",
     "bin/gt",
     "features/gt_scp_file.feature",
     "features/step_definitions/gt_scp_steps.rb",
     "features/support/env.rb",
-    "growl-down.gemspec",
+    "growl-transfer.gemspec",
     "lib/growl-transfer.rb",
     "lib/growl-transfer/gt_scp.rb",
     "test/helper.rb",
