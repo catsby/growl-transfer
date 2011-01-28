@@ -15,13 +15,14 @@ Jeweler::Tasks.new do |gem|
   gem.name = "growl-down"
   gem.homepage = "http://github.com/ctshryock/gd"
   gem.license = "MIT"
-  gem.summary = "Download big files, get Growl notice when it's done."
+  gem.summary = %Q{Download big files, get Growl notice when it's done}
   gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "clint@ctshryock.com"
+  gem.email = "clint+growl-down@ctshryock.com"
   gem.authors = ["Clint Shryock"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
+  gem.add_runtime_dependency "ruby-growl", ">=3.0"
+  gem.add_runtime_dependency "net-scp", ">=1.0.4"
   #  gem.add_development_dependency 'rspec', '> 1.2.3'
 end
 Jeweler::RubygemsDotOrgTasks.new
