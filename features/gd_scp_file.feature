@@ -6,7 +6,7 @@ Feature: growl-down downloads a file via scp
     So that I can do other things in the meantime 
     And not have to watch or check the progress 
 
-    Scenario: download file assuming ssh keyless authentication
+    Scenario: Download file assuming ssh keyless authentication
         Given I have an available server "ctshryock.com"
         And "growl-down-test/unicorns.zip" as the file name
         When I run "download"
