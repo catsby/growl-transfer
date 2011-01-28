@@ -4,16 +4,16 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{growl-down}
-  s.version = "0.0.1"
+  s.name = %q{growl-transfer}
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Clint Shryock"]
   s.date = %q{2011-01-27}
-  s.default_executable = %q{gd}
+  s.default_executable = %q{gt}
   s.description = %q{A ruby gem wrapper around scp / curl / wget (and the like) that notifies you via Growl when the transfer is complete}
-  s.email = %q{clint+growl-down@ctshryock.com}
-  s.executables = ["gd"]
+  s.email = %q{clint+growl-transfer@ctshryock.com}
+  s.executables = ["gt"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -25,20 +25,21 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "bin/gd",
-    "features/gd_scp_file.feature",
-    "features/step_definitions/gd_scp_steps.rb",
+    "bin/gt",
+    "features/gt_scp_file.feature",
+    "features/step_definitions/gt_scp_steps.rb",
     "features/support/env.rb",
-    "lib/growl-down.rb",
-    "lib/growl-down/gd_scp.rb",
+    "growl-down.gemspec",
+    "lib/growl-transfer.rb",
+    "lib/growl-transfer/gt_scp.rb",
     "test/helper.rb",
     "test/test_gd.rb"
   ]
-  s.homepage = %q{http://github.com/ctshryock/gd}
+  s.homepage = %q{https://github.com/ctshryock/growl-transfer}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Download big files, get Growl notice when it's done}
+  s.summary = %q{Transfer big files, get Growl notice when it's done}
   s.test_files = [
     "test/helper.rb",
     "test/test_gd.rb"
