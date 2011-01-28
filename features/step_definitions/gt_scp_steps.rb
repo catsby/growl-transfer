@@ -25,13 +25,17 @@ def output
   @output ||= Output.new
 end
 
-Given /^I have an available server "([^"]*)"$/ do |remote_host|
+Given /^I have ssh keyless auth setup on "([^"]*)"$/ do |remote_host|
   @remote = []
   @remote << remote_host
 end
 
-When /^"([^"]*)" as the file name$/ do |remote_path|
+Given /^specify "([^"]*)" as the file name$/ do |remote_path|
   @remote << remote_path
+end
+
+Given /^I specify "([^"]*)" as the username before the url$/ do |arg1|
+  @remote[0] = 'clint' + '@' + @remote[0]
 end
 
 When /^I run "([^"]*)"$/ do |arg1|
