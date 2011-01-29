@@ -19,6 +19,10 @@ Growl-Transfer sends growl notifications to "localhost" and needs these options 
 - Download files using scp and ssh keyless authentication
 - Much more coming soon...
 
+##Bugs and feature requests
+
+Please file bugs and feature requests at the [Lighthouse project for Growl-Transfer][2]
+
 ##Contributing to Growl-Transfer
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
@@ -35,3 +39,4 @@ Copyright (c) 2011 Clint Shryock. See LICENSE.txt for
 further details.
 
 [1]: http://growl.info/
+[2]: http://ctshryock.lighthouseapp.com/projects/68720-growl-transfer
