@@ -39,4 +39,4 @@ Copyright (c) 2011 Clint Shryock. See LICENSE.txt for
 further details.
 
 [1]: http://growl.info/
-[2]: http://ctshryock.lighthouseapp.com/projects/68720-growl-transfer
+[2]: http://ctshryock.lighthouseapp.com/projects/68720-growl-transfer/tickets
