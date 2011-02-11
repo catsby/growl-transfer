@@ -24,6 +24,11 @@ OptionParser.new do |opts|
     options[:verbose] = v
   end
   
+  opts.on("--version", "Display current version") do 
+    puts "Growl-Transfer " + version
+    exit 0
+  end
+  
 end.parse!
 
 
