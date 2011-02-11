@@ -5,7 +5,29 @@ require 'growl-transfer'
 require 'optparse'
 
 # Get source and destintation from command line
+version = File.exist?('VERSION') ? File.read('VERSION') : ""
+help =<<HELP
+  Growl-Transfer version #{version} 
+  Basic Command Line Usage:
+  
+    gt you@server.com:/file/path local/path           # Downloads /file/path to local/path 
+  
+  Options:
+HELP
+
+
 options = {}
+OptionParser.new do |opts|
+  opts.banner = help
+  
+  opts.on("-v", "--[no-]verbose", "Run Verbosely") do |v|
+    options[:verbose] = v
+  end
+  
+end.parse!
+
+
+
 case ARGV.size
   when 1
     options['remote'] = ARGV[0]
@@ -14,7 +36,7 @@ case ARGV.size
     options['remote'] = ARGV[0]
     options['local']  = ARGV[1]
   else
-    puts "Invalid options"
+    puts "Invalid options: run gt --help for usage"
     exit(1)
 end
 
