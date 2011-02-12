@@ -50,16 +50,3 @@ end
 Then /^TEST_DIR should contains "([^"]*)" file$/ do |arg1|
   File.file?([TEST_DIR, arg1].join('/'))
 end
-
-
-#
-#  Options
-#
-
-Given /^I run gt with no parameters$/ do
-  true
-end
-
-When /^I specify option "([^"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
