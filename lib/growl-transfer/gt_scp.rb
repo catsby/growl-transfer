@@ -1,9 +1,12 @@
 module GrowlTransfer
-  class GTScp
-    def initialize(output)
-      @output = output
-    end
-    
+  class GTTransferObjet
+    def initialize
+      @output = GrowlTransfer::DEFAULTS['output']
+    end    
+  end
+  
+  class GTScp < GTTransferObjet
+
     def download(remote, local_path)
       @output.puts "Downloading #{remote}"            
       params = remote.split(":")
