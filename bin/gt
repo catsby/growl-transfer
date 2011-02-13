@@ -46,5 +46,4 @@ case ARGV.size
     exit(1)
 end
 
-downloader = GrowlTransfer::GTScp.new(STDOUT)
-downloader.download(options['remote'], options['local'])
+GrowlTransfer::Download(options['remote'], options['local'])

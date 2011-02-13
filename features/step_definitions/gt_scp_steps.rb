@@ -39,8 +39,8 @@ Given /^I specify "([^"]*)" as the username before the url$/ do |arg1|
 end
 
 When /^I run "([^"]*)"$/ do |arg1|
-  gd_scp = GrowlTransfer::GTScp.new(output)
-  gd_scp.download(@remote.join(':'), TEST_DIR)
+  GrowlTransfer::DEFAULTS.merge!({'output'=>output})
+  GrowlTransfer::Download(@remote.join(':'), TEST_DIR)
 end
 
 Then /^I should see "([^"]*)"$/ do |status|
