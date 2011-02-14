@@ -11,7 +11,7 @@ Feature: growl-down downloads a file via scp
         And specify "growl-down-test/unicorns.zip" as the file name
         When I run "download"
         Then I should see "Finished!"
-        And TEST_DIR should contains "unicorns.zip" file
+        And TEST_DIR should contain "unicorns.zip" file
         
     Scenario: Download file assuming ssh keyless auth, but specify a username 
         Given I have ssh keyless auth setup on "ctshryock.com"
@@ -19,5 +19,14 @@ Feature: growl-down downloads a file via scp
         And specify "growl-down-test/unicorns.zip" as the file name
         When I run "download"
         Then I should see "Finished!"
-        And TEST_DIR should contains "unicorns.zip" file
+        And TEST_DIR should contain "unicorns.zip" file
+        
+        
+    Scenario: Download file assuming password based auth
+        Given I have a valid password setup on "ctshryock.com"
+        And I specify the "-p" option
+        And specify "growl-down-test/unicorns.zip" as the file name
+        When I run "download"
+        Then I should see "Finished!"
+        And TEST_DIR should contain "unicorns.zip" file
         
