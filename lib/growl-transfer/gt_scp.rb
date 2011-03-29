@@ -1,13 +1,13 @@
 module GrowlTransfer
   class GTTransferObjet
     def initialize
-      @output = GrowlTransfer::DEFAULTS['output']
+      @output = GrowlTransfer::DEFAULTS[:output]
     end    
   end
   
   class GTScp < GTTransferObjet
 
-    def download(remote, local_path)
+    def download(remote, local_path, username = nil, password = nil)
       @output.puts "Downloading #{remote}"            
       params = remote.split(":")
       file = params.last.split("/").last
@@ -20,12 +20,14 @@ module GrowlTransfer
         user   = ENV['USER']
       end
       
-      Net::SCP.start(server, user) do |scp|
+      user = username unless username.nil?
+      
+      Net::SCP.start(server, user, :password => password) do |scp|
         scp.download!(params[1], local_path, {:recursive => true, :verbose => true}) do |ch, name, sent, total|
           # => progress?
         end
+        @output.puts "Finished!"
       end
-      @output.puts "Finished!"
       g = Growl.new "localhost", "GrowlTransfer",
                     ["GrowlTransfer Notification"]
       g.notify "GrowlTransfer Notification", "#{file}",

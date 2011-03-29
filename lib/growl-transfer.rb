@@ -8,13 +8,13 @@ require 'growl-transfer/gt_scp.rb'
 module GrowlTransfer
   
   DEFAULTS = {
-    'output'    => STDOUT,
-    'local'     => "."
+    :output    => $stdout,
+    :action    => 'download'
   }
   
-  def self.Download(remote, local)
+  def self.Download(opts = {})
     gd_scp = GTScp.new
-    gd_scp.download(remote, local)
+    gd_scp.download(opts[:remote], opts[:local], opts[:username], opts[:password])
   end
   
 end
