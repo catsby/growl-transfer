@@ -10,6 +10,21 @@ later it's been ready for an hour.  Growl Transfer wraps scp (soon
 others) and sends a Growl notice when the transfer is done.  
 
 
+##Usage
+
+Growl Transfer works just like scp
+
+    $ gt user@server.com:file_path local_path
+
+This will start to download `file_path` to the `local_path`
+directory.
+
+You can use password based auth by using the `p|--password` option
+
+    $ gt user@server.com:file_path local_path --password
+    $ Password: 
+
+
 ##Installation
 Growl-Transfer requires [Growl][1] to be installed first.
 
