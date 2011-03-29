@@ -1,8 +1,14 @@
 #Growl-Transfer
 
-Growl-Transfer is a little gem that wraps around a file transfer protocol (scp/curl) and notifies you via growl when the transfer is complete.
+Growl-Transfer is a little gem for initiating downloads over the
+command-line and receiving a notification when they complete.  You don't
+have to 
+watch curl or scp as they slowing trickel down the bits, and no worring
+about getting destracted by something shinny only to forget you needed
+that 120MB database dump only to find
+later it's been ready for an hour.  Growl Transfer wraps scp (soon
+others) and sends a Growl notice when the transfer is done.  
 
-This is an early release, so there's not a ton here.
 
 ##Installation
 Growl-Transfer requires [Growl][1] to be installed first.
@@ -16,7 +22,8 @@ Growl-Transfer sends growl notifications to "localhost" and needs these options 
 
 ##Features
 
-- Download files using scp and ssh keyless authentication
+- Download files using ssh
+- Keyless and password based authentication supported
 - Much more coming soon...
 
 ##Bugs and feature requests
