@@ -2,12 +2,14 @@ Before do
   FileUtils.mkdir(TEST_DIR)
   Dir.chdir(TEST_DIR)
   @remote = []
+  @options = {}
 end
 
 After do
   Dir.chdir(TEST_DIR)
   FileUtils.rm_rf(TEST_DIR)
   @remote.clear
+  @options.clear
 end
 
 class Output
@@ -16,6 +18,10 @@ class Output
   end
   
   def puts(message)
+    messages << message
+  end
+  
+  def write(message)
     messages << message
   end
 end
@@ -27,8 +33,8 @@ def output
   @output ||= Output.new
 end
 
-Given /^I have ssh keyless auth setup on "([^"]*)"$/ do |remote_host|
-  @remote << remote_host
+Given /^I have ssh keyless auth setup on "([^"]*)"$/ do |remote_path|
+  @remote << remote_path
 end
 
 Given /^specify "([^"]*)" as the file name$/ do |remote_path|
@@ -39,17 +45,19 @@ Given /^I specify "([^"]*)" as the username before the url$/ do |arg1|
   @remote[0] = 'clint' + '@' + @remote[0]
 end
 
-Given /^I have a valid password setup on "([^"]*)"$/ do |remote_host|
-  pending # need server I have password but not keyless auth on @remote << remote_host
+Given /^I have a valid password setup on "([^"]*)"$/ do |remote_path|
+  @remote << remote_path
 end
 
 Given /^I specify the "([^"]*)" option$/ do |remote_host|
-  @remote << remote_host
+  @options[:password_flag] = '-p'
 end
 
-When /^I run "([^"]*)"$/ do |arg1|
-  GrowlTransfer::DEFAULTS.merge!({'output'=>output})
-  GrowlTransfer::Download(@remote.join(':'), TEST_DIR)
+When /^I run "([^"]*)"$/ do |action|
+  @options[:from] = @remote.join(':')
+  @options[:to]   = TEST_DIR
+  puts @options[:from]
+  run_gt(@options)
 end
 
 Then /^I should see "([^"]*)"$/ do |status|
@@ -57,5 +65,5 @@ Then /^I should see "([^"]*)"$/ do |status|
 end
 
 Then /^TEST_DIR should contain "([^"]*)" file$/ do |arg1|
-  File.file?([TEST_DIR, arg1].join('/'))
+  (File.file?([TEST_DIR, arg1].join('/'))).should == true
 end

@@ -6,27 +6,22 @@ Feature: growl-down downloads a file via scp
     So that I can do other things in the meantime 
     And not have to watch or check the progress 
 
-    Scenario: Download file assuming ssh keyless authentication
-        Given I have ssh keyless auth setup on "ctshryock.com"
-        And specify "growl-down-test/unicorns.zip" as the file name
-        When I run "download"
-        Then I should see "Finished!"
-        And TEST_DIR should contain "unicorns.zip" file
-        
-    Scenario: Download file assuming ssh keyless auth, but specify a username 
-        Given I have ssh keyless auth setup on "ctshryock.com"
-        And I specify "clint" as the username before the url
-        And specify "growl-down-test/unicorns.zip" as the file name
-        When I run "download"
-        Then I should see "Finished!"
-        And TEST_DIR should contain "unicorns.zip" file
-        
+    # Scenario: Download file assuming ssh keyless authentication
+    #     Given I have ssh keyless auth setup on "ctshryock.com"
+    #     And specify "growl-down-test/unicorns.zip" as the file name
+    #     When I run "download"
+    #     Then TEST_DIR should contain "unicorns.zip" file
+    #     
+    # Scenario: Download file assuming ssh keyless auth, but specify a username 
+    #     Given I have ssh keyless auth setup on "ctshryock.com"
+    #     And I specify "clint" as the username before the url
+    #     And specify "growl-down-test/unicorns.zip" as the file name
+    #     When I run "download"
+    #     Then TEST_DIR should contain "unicorns.zip" file        
         
     Scenario: Download file assuming password based auth
-        Given I have a valid password setup on "ctshryock.com"
+        Given I have a valid password setup on "clint@ctshryock.com"
         And I specify the "-p" option
         And specify "growl-down-test/unicorns.zip" as the file name
         When I run "download"
-        Then I should see "Finished!"
-        And TEST_DIR should contain "unicorns.zip" file
-        
+        Then TEST_DIR should contain "unicorns.zip" file
