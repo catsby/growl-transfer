@@ -22,6 +22,14 @@ GEM
     net-ssh (2.0.23)
     rake (0.8.7)
     rcov (0.9.9)
+    rspec (2.5.0)
+      rspec-core (~> 2.5.0)
+      rspec-expectations (~> 2.5.0)
+      rspec-mocks (~> 2.5.0)
+    rspec-core (2.5.1)
+    rspec-expectations (2.5.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.5.0)
     ruby-growl (3.0)
     shoulda (2.11.3)
     term-ansicolor (1.0.5)
@@ -35,5 +43,6 @@ DEPENDENCIES
   jeweler (~> 1.5.1)
   net-scp (>= 1.0.4)
   rcov
+  rspec
   ruby-growl (>= 3.0)
   shoulda

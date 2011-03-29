@@ -13,4 +13,5 @@ group :development do
     gem "ruby-growl", ">=3.0"
     gem "net-scp", ">=1.0.4"
     gem "cucumber"
+    gem "rspec"
 end
