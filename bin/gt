@@ -2,8 +2,10 @@
 $:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
 
 require 'growl-transfer'
-
 require 'optparse'
+require 'pp'
+require 'readline'
+require 'highline/import'
 
 # Get source and destintation from command line
 version = File.exist?('VERSION') ? File.read('VERSION') : ""
@@ -30,20 +32,35 @@ OptionParser.new do |opts|
     exit 0
   end
   
+  opts.on('-p', '--password', 'Use this password') do |v|
+    options[:password] = true
+  end
+  
 end.parse!
-
 
 
 case ARGV.size
   when 1
-    options['remote'] = ARGV[0]
-    options['local']  = '.'
+    options[:remote] = ARGV[0]
+    options[:local]  = '.'
   when 2
-    options['remote'] = ARGV[0]
-    options['local']  = ARGV[1]
+    options[:remote] = ARGV[0]
+    options[:local]  = ARGV[1]
   else
     puts "Invalid options: run gt --help for usage"
     exit(1)
 end
 
-GrowlTransfer::Download(options['remote'], options['local'])
+def get_password(prompt="Enter Password")
+   ask(prompt) {|q| q.echo = false}
+end
+
+if options[:password]
+  options[:password] = get_password()
+  if options[:password].empty?
+    puts 'Failed to enter password'
+    exit(1)
+  end
+end
+
+GrowlTransfer::Download(options)
