@@ -1,6 +1,11 @@
-require 'rubygems'
-require 'net/scp'
-require 'ruby-growl'
+begin
+  require 'net/scp'
+  require 'ruby-growl'
+rescue LoadError
+  require 'rubygems'
+  require 'net/scp'
+  require 'ruby-growl'
+end
 
 require 'growl-transfer/gt_scp.rb'
 
