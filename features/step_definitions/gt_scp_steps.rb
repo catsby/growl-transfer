@@ -56,7 +56,6 @@ end
 When /^I run "([^"]*)"$/ do |action|
   @options[:from] = @remote.join(':')
   @options[:to]   = TEST_DIR
-  puts @options[:from]
   run_gt(@options)
 end
 

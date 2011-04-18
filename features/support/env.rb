@@ -10,7 +10,6 @@ def run_gt(opts = {})
   command = GT_PATH + ' '
   command << opts[:password_flag] + ' ' unless opts[:password_flag].nil?
   command << opts[:from] + ' ' + opts[:to] 
-  # command << " >> /dev/null 2>&1" if opts[:debug].nil?
-  # pp command
+  command << " >> /dev/null 2>&1" if opts[:debug].nil?
   system command
 end
